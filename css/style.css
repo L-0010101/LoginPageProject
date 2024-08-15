@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Open Sans", sans-serif;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    background-color: aliceblue;
+}
+.content{
+    border-radius: 15px;
+    background-color: white;
+    width: 960px;
+    height: 50%;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.content::before{
+    content: "";
+    position: absolute;
+    background-color: midnightblue;
+    width: 40%;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+
+
+
+    left: 0;
+}
+.content.first{
+    display: flex;
+}
+.content.first .second.column{
+    z-index: 11;
+}
+.title{
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.title.title-primary{
+    color: white;
+}
+.title.title-second{
+    color: midnightblue;
+}
+.description{
+    font: 14px;
+    font-weight: lighter;
+}
+.description.description-primary{
+    color: white;
+    margin-bottom: 5px;
+}
+.description.description-second{
+    color: gray;
+}
+
+.btn{
+    border-radius: 15px;
+    text-transform: uppercase;
+    color: white;
+    font-size: 10px;
+    padding: 10px 50px;
+    cursor: pointer;
+    width: 150px;
+    align-self: center;
+    border: none;
+    margin-top: 1rem 0;
+}
+.btn.btn-primary{
+    background-color: transparent;
+    border: 1px solid white;
+}
+.btn.btn-primary:hover{
+    color: midnightblue;
+    background-color: white;
+    transition: .3s;
+}
+.btn.btn-second{
+    background-color: midnightblue;
+    border: midnightblue;
+    border: 1px solid midnightblue;
+}
+.btn.btn-second:hover{
+    background-color: transparent;
+    color: midnightblue;
+    border-width: 1px solid midnightblue;
+    transition: .3s;
+}
+.first.column{
+    text-align: center;
+    width: 40%;
+    z-index: 10;
+}
+.second.column{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.social-media{
+    margin: 1rem 0;
+}
+.list-social-media{
+    display: flex;
+    list-style-type: none;
+}
+.item-social-media{
+    border: 1px solid;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    color: gray;
+}
+.link-social-media:not(:first-child){
+    margin-left: 10px;
+}
+.link-social-media:hover .item-social-media{
+    background-color: midnightblue;
+    color: lightgrey;
+    transition: .3s;
+    border-color: lightgray;
+}
+.form{
+    display:flex;
+    flex-direction: column;
+    width: 55%;
+}
+.form input{
+    height: 45px;
+    border: none;
+    background-color: lightgrey;
+    width: 100%;
+}
+.label-input{
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    margin: 5px;
+}
+.icon-modify{
+    color: gray;
+    padding: 0 5px;
+}
+
+/* second content */
+
+.content.second{
+    position: absolute;
+    display: flex;
+}
+.content.second .first.column{
+    order: 2;
+    z-index: -1;
+}
+.content.second .second.column{
+    order: 1;
+    z-index: -1;;
+}
+.password{
+    color: midnightblue;
+    margin: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+.password::first-letter{
+    text-transform: capitalize;
+}
+
+
+
+
+
+.sign-in-js .content.first .first.column,
+.sign-in-js .content.first .second.column{
+    z-index: -1;
+    animation: opacityout 1s;
+}
+.sign-in-js .content.second .first.column{
+    z-index: 13;
+    animation: opacityin 3s;
+}
+.sign-in-js .content.second .second.column{
+    z-index: 11;
+    animation: opacityin 3s;
+}
+.sign-in-js .content::before{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    left: 60%;
+    z-index: 12;
+    animation: slidein 3s;
+}
+
+.sign-up-js .content.second .first.column,
+.sign-up-js .content.second .second.column{
+    z-index: -1;
+    animation: opacityout 1s;
+}
+.sign-up-js .content.first .first.column{
+    z-index: 13;
+    animation: opacityin 3s;
+}
+.sign-up-js .content.first .second.column{
+    z-index: 11;
+    animation: opacityin 3s;
+}
+.sign-up-js .content::before{
+    z-index: 12;
+    animation: slideout 3s;
+}
+
+/* ANIMAÇÃO CSS*/
+@keyframes slidein {
+
+from {
+    left: 0;
+    width: 40%;
+}
+25%{
+    left: 5%;
+    width: 50%;
+
+}
+50%{
+    left: 25%;
+    width: 60%;
+}
+75%{
+    left: 45%;
+    width: 50%;
+}
+
+to {
+    left: 60%;
+    width: 40%;
+}
+
+}
+
+@keyframes slideout {
+
+    from {
+        left: 60%;
+        width: 40%;
+    }
+    25%{
+        left: 45%;
+        width: 50%;
+    
+    }
+    50%{
+        left: 25%;
+        width: 60%;
+    }
+    75%{
+        left: 5%;
+        width: 50%;
+    }
+    
+    to {
+        left: 0;
+        width: 40%;
+    }
+    
+    }
+
+    @keyframes opacityin {
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 100%;
+        }
+    }
+    @keyframes opacityout {
+        from{
+            opacity: 100%;
+            z-index: 20;
+        }
+        to{
+            opacity: 0;
+            z-index: -1;
+        }
+    }
